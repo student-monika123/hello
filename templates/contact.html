@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<div>
+    <img src="https://lazza.co.in/assets/images/contactimg.6cdc73b3.png" class="d-block w-100" alt="..." style="height: 250px;">
+    <h1 class="text-center" >Contact Us</h1>
+    <div class="container">
+        <form action="/contact" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Your Email"  >
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" name="phone" placeholder="Enter Your Phone Number">
+            </div>
+            
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Message here.." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+{% endblock body %}
+
